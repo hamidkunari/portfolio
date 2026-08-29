@@ -3,901 +3,584 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hamidullah — Full Stack Laravel Developer, Kuala Lumpur</title>
-<meta name="description" content="Hamidullah — Full Stack Developer in Kuala Lumpur, Malaysia. Laravel, PHP, MySQL. Building clinic, salon, restaurant, ecommerce and job portal systems.">
+<title>Hamidullah Kunarai — Laravel Developer, Kuala Lumpur</title>
+<meta name="description" content="Hamidullah Kunarai — Full-Stack Laravel Developer in Kuala Lumpur. Open to full-time roles. 5+ years building booking, ordering, and admin systems for real businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0A0F1C;
-    --bg-panel:#0F1830;
-    --bg-panel-alt:#0D1528;
-    --card:#141F38;
-    --card-hover:#182545;
-    --border:#223357;
-    --border-light:#2A3B63;
-    --text:#F1F5F9;
-    --text-soft:#9AAAC4;
-    --text-dim:#5E6E8C;
-    --gold:#E8B84B;
-    --gold-hover:#D9A53A;
-    --gold-soft:rgba(232,184,75,.12);
-    --blue:#3B82F6;
-    --blue-soft:rgba(59,130,246,.12);
-    --success:#34D399;
-    --success-soft:rgba(52,211,153,.12);
-    --radius:16px;
-    --radius-sm:10px;
-    --shadow-gold:0 0 0 1px rgba(232,184,75,.28),0 24px 48px rgba(232,184,75,.10);
-    --shadow-blue:0 0 0 1px rgba(59,130,246,.28),0 24px 48px rgba(59,130,246,.10);
-    --shadow-lg:0 24px 60px rgba(0,0,0,.5);
-    --container:1240px;
-    --font-display:'Plus Jakarta Sans',sans-serif;
-    --font-body:'Inter',sans-serif;
-    --font-mono:'JetBrains Mono',ui-monospace,monospace;
+    --ink:#0f1b2b;
+    --panel:#16283d;
+    --panel-2:#1d3550;
+    --signal:#3fd0c0;
+    --amber:#f2a649;
+    --paper:#f5f7f9;
+    --muted:#7c93a8;
+    --muted-dark:#4a5f74;
+    --line: rgba(255,255,255,0.09);
+    --line-dark: rgba(15,27,43,0.1);
+    --radius: 10px;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Inter', system-ui, sans-serif;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    font-family:var(--font-body);color:var(--text);background:var(--bg);
-    line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
   }
-  img{max-width:100%;display:block}
-  a{color:inherit;text-decoration:none}
-  ul{list-style:none}
-  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
-  section{padding:88px 0}
-  h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-0.02em;color:var(--text)}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
   .eyebrow{
-    font-family:var(--font-mono);font-size:13px;letter-spacing:.03em;color:var(--gold);
-    text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px;margin-bottom:16px;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color: var(--signal); font-weight:600; margin-bottom:12px; display:flex; align-items:center; gap:8px;
   }
-  .eyebrow::before{content:"";width:16px;height:1.5px;background:var(--gold);flex:none}
-  .section-title{font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:14px}
-  .section-title .gold{color:var(--gold)}
-  .section-sub{font-size:19px;color:var(--text-soft);max-width:640px;font-weight:400;line-height:1.6}
-  .section-head{margin-bottom:48px}
-  .center{text-align:center;margin-left:auto;margin-right:auto}
+  .eyebrow:before{content:""; width:20px; height:1.5px; background:var(--signal); display:inline-block;}
+  h1,h2,h3{font-family:var(--sans); font-weight:800; letter-spacing:-0.025em; line-height:1.08;}
+  h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:16px;}
+  .lede{color:var(--muted-dark); max-width:620px; font-size:16.5px;}
+  section{padding:96px 0;}
+  section.tight{padding:56px 0;}
 
+  /* ===== STATUS BAR — signature element ===== */
+  .statusbar{
+    background: var(--ink); color:#e6edf3;
+    font-family: var(--mono); font-size:13px;
+    border-bottom:1px solid var(--line);
+    position: sticky; top:0; z-index:50;
+  }
+  .statusbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:10px; padding-bottom:10px; gap:16px; flex-wrap:wrap;
+  }
+  .status-dot{
+    width:8px; height:8px; border-radius:50%; background:var(--signal);
+    display:inline-block; margin-right:8px; box-shadow:0 0 0 0 rgba(63,208,192,.6);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(63,208,192,.5);}
+    70%{box-shadow:0 0 0 7px rgba(63,208,192,0);}
+    100%{box-shadow:0 0 0 0 rgba(63,208,192,0);}
+  }
+  .status-left{display:flex; align-items:center; color:#e6edf3;}
+  .status-right{display:flex; gap:18px; color:var(--muted); flex-wrap:wrap;}
+  .status-right span b{color:#e6edf3; font-weight:600;}
+
+  /* ===== NAV ===== */
+  nav.mainnav{ background:var(--ink); border-bottom:1px solid var(--line); position:sticky; top:35px; z-index:49;}
+  nav.mainnav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+  .brand{font-family:var(--mono); color:#fff; font-weight:600; font-size:15px;}
+  .brand span{color:var(--signal);}
+  .navlinks{display:flex; gap:30px; list-style:none; font-size:14px; align-items:center;}
+  .navlinks a{color:var(--muted); text-decoration:none; transition:color .15s;}
+  .navlinks a:hover{color:#fff;}
+  .navcta{
+    background:var(--signal); color:var(--ink); font-weight:700; font-size:13px;
+    padding:10px 18px; border-radius:6px; text-decoration:none; font-family:var(--mono);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .navcta:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(63,208,192,.28);}
+  .navtoggle{display:none; background:none; border:0; color:#fff; font-size:22px; cursor:pointer; padding:4px 8px;}
+  .mobile-panel{ display:none; background:var(--panel); border-top:1px solid var(--line);}
+  .mobile-panel.open{ display:block;}
+  .mobile-panel ul{list-style:none; padding:14px 28px 20px;}
+  .mobile-panel a{ display:block; color:#e6edf3; text-decoration:none; padding:10px 0; font-size:15px; border-top:1px solid var(--line);}
+  .mobile-panel li:first-child a{border-top:0;}
+
+  /* ===== HERO ===== */
+  .hero{ background:var(--ink); color:#fff; padding:76px 0 90px; position:relative; overflow:hidden;}
+  .hero .wrap{position:relative; z-index:2;}
+  .hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:56px; align-items:center;}
+  .hero h1{ color:#fff; font-size:clamp(34px,5vw,54px); margin-bottom:20px;}
+  .hero h1 em{ font-style:normal; color:var(--signal);}
+  .hero p.lede{ color:#c3d2de; font-size:17px; margin-bottom:30px;}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap;}
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:var(--font-body);font-weight:700;font-size:16px;padding:15px 28px;border-radius:100px;
-    border:1px solid transparent;cursor:pointer;transition:all .2s ease;white-space:nowrap;
+    display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14.5px;
+    padding:14px 24px; border-radius:8px; text-decoration:none; border:1.5px solid transparent;
+    font-family:var(--sans); transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .btn-gold{background:linear-gradient(180deg,#F0C767,var(--gold));color:#1A1300;box-shadow:var(--shadow-gold)}
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(232,184,75,.4),0 30px 60px rgba(232,184,75,.18)}
-  .btn-outline{background:transparent;color:var(--text);border-color:var(--border-light)}
-  .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-  .btn-sm{padding:11px 20px;font-size:14.5px;border-radius:9px}
-  .btn-block{width:100%}
+  .btn-primary{ background:var(--signal); color:var(--ink);}
+  .btn-primary:hover{ background:#5fe0d2; transform:translateY(-2px); box-shadow:0 10px 24px rgba(63,208,192,.3);}
+  .btn-ghost{ border-color: rgba(255,255,255,0.25); color:#fff;}
+  .btn-ghost:hover{ border-color:#fff; transform:translateY(-2px);}
+  .btn-dark{ background:var(--ink); color:#fff;}
+  .btn-dark:hover{ background:#1d3550; transform:translateY(-2px); box-shadow:0 10px 24px rgba(15,27,43,.25);}
 
-  /* ---------- NAV ---------- */
-  header{
-    position:sticky;top:0;z-index:200;
-    background:rgba(10,15,28,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
+  .hero-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    overflow:hidden; box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
   }
-  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--container);margin:0 auto}
-  .logo{font-family:var(--font-display);font-weight:800;font-size:19px;display:flex;align-items:center;gap:10px}
-  .logo-mark{
-    width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#B8842E);color:#1A1300;
-    display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex:none;
+  .hero-panel-head{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 16px; border-bottom:1px solid var(--line); font-family:var(--mono); font-size:12px; color:var(--muted);
   }
-  .nav-links{display:flex;gap:30px;font-size:15px;font-weight:500}
-  .nav-links a{color:var(--text-soft);transition:color .15s ease}
-  .nav-links a:hover{color:#fff}
-  .nav-cta{display:flex;align-items:center;gap:12px}
-  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
-  .nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;transition:.2s}
+  .dots{display:flex; gap:6px;}
+  .dots span{width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.15);}
+  .metrics{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line);}
+  .metric{ background:var(--panel); padding:22px 18px;}
+  .metric .num{ font-family:var(--mono); font-size:28px; font-weight:700; color:var(--signal);}
+  .metric .label{ font-size:12.5px; color:var(--muted); margin-top:4px;}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:80px 0 70px;position:relative;overflow:hidden}
-  .hero-glow{position:absolute;inset:-60px;z-index:-3;overflow:hidden;pointer-events:none}
-  .hero-glow img{width:100%;height:100%;object-fit:cover;filter:blur(70px) saturate(1.25) brightness(.5);opacity:.4;transform:scale(1.2)}
-  .hero-bg{
-    position:absolute;inset:0;z-index:-1;
-    background:
-      linear-gradient(180deg, rgba(10,15,28,.55), var(--bg) 92%),
-      radial-gradient(620px 420px at 84% 6%, rgba(232,184,75,.14), transparent 68%),
-      radial-gradient(500px 360px at 6% 96%, rgba(59,130,246,.12), transparent 68%);
+  /* ===== FOR EMPLOYERS ===== */
+  .employers{ background:#fff; border-top:1px solid var(--line-dark);}
+  .employers-card{
+    background: var(--paper); border:1px solid #e1e8ed; border-radius:14px;
+    padding:38px; display:grid; grid-template-columns: 1fr auto; gap:24px; align-items:center;
+    box-shadow: 0 20px 40px -24px rgba(15,27,43,.18);
   }
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-  .badge{
-    display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:100px;
-    background:var(--success-soft);color:#4ADE94;font-size:13px;font-weight:600;margin-bottom:22px;
-    border:1px solid rgba(52,211,153,.3);
-  }
-  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--success);flex:none;animation:pulse 2s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-  .hero h1{font-size:clamp(38px,5.6vw,60px);font-weight:800;line-height:1.08;margin-bottom:22px}
-  .hero h1 .gold{color:var(--gold)}
-  .hero-sub{font-size:19px;color:var(--text-soft);max-width:520px;margin-bottom:30px}
-  .hero-ctas{display:flex;gap:14px;margin-bottom:34px;flex-wrap:wrap}
-  .tech-badges{display:flex;flex-wrap:wrap;gap:10px}
-  .tech-pill{
-    font-family:var(--font-mono);font-size:12.5px;padding:8px 13px;border:1px solid var(--border-light);
-    border-radius:8px;color:var(--text-soft);background:var(--card);transition:.2s;
-  }
-  .tech-pill:hover{border-color:var(--gold);color:var(--gold)}
+  .employers-card h2{ font-size:23px; margin-bottom:8px;}
+  .employers-card p{ color:var(--muted-dark); font-size:15px; max-width:560px;}
+  .employers-actions{display:flex; flex-direction:column; gap:10px; min-width:200px;}
 
-  .terminal{
-    background:#070B15;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);
-    border:1px solid var(--border-light);
-  }
-  .terminal-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#0D1424;border-bottom:1px solid var(--border)}
-  .terminal-dot{width:10px;height:10px;border-radius:50%}
-  .terminal-body{padding:22px 20px 26px;font-family:var(--font-mono);font-size:13.5px;color:#B7C4DB;min-height:230px}
-  .terminal-body .line{margin-bottom:10px;display:flex;gap:8px;flex-wrap:wrap}
-  .terminal-body .prompt{color:var(--gold)}
-  .terminal-body .out{color:var(--text-dim)}
-  .terminal-body .ok{color:var(--success)}
-  .cursor{display:inline-block;width:7px;height:14px;background:var(--gold);animation:blink 1s step-end infinite;vertical-align:middle}
-  @keyframes blink{50%{opacity:0}}
+  /* ===== SKILLS ===== */
+  .skills-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#dde5ea; border:1px solid #dde5ea; border-radius:14px; overflow:hidden;}
+  .skill-mod{ background:#fff; padding:26px 22px; transition: background .15s ease;}
+  .skill-mod:hover{ background:#fbfdfe;}
+  .skill-mod .modtag{ font-family:var(--mono); font-size:11px; color:var(--signal); background:var(--ink); display:inline-block; padding:3px 8px; border-radius:4px; margin-bottom:12px;}
+  .skill-mod h3{ font-size:15.5px; margin-bottom:10px;}
+  .skill-mod ul{ list-style:none; font-size:13.5px; color:var(--muted-dark);}
+  .skill-mod li{ padding:3px 0; border-top:1px dashed #e6ebee;}
+  .skill-mod li:first-child{border-top:0;}
+  .skill-mod li.learning{ color:var(--amber); font-weight:600;}
 
-  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-  .stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 18px;transition:.2s}
-  .stat-card:hover{border-color:var(--border-light);transform:translateY(-2px)}
-  .stat-num{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--gold)}
-  .stat-label{font-size:13.5px;color:var(--text-soft);margin-top:4px}
+  /* ===== PROJECTS ===== */
+  .proj{ background:#fff; border:1px solid #e1e8ed; border-radius:14px; overflow:hidden; margin-bottom:24px; display:grid; grid-template-columns: 1fr 1.15fr; box-shadow: 0 16px 36px -24px rgba(15,27,43,.2); transition: box-shadow .2s ease, transform .2s ease;}
+  .proj:hover{ box-shadow: 0 24px 48px -20px rgba(15,27,43,.28); transform:translateY(-3px);}
+  .proj:nth-child(even){grid-template-columns: 1.15fr 1fr;}
+  .proj:nth-child(even) .proj-img{order:2;}
+  .proj-img{ background:var(--panel); min-height:100%; overflow:hidden;}
+  .proj-img img{ width:100%; height:100%; object-fit:cover; min-height:240px; transition: transform .4s ease;}
+  .proj:hover .proj-img img{ transform:scale(1.04);}
+  .proj-body{ padding:34px 36px;}
+  .proj-tag{ font-family:var(--mono); font-size:11.5px; color:var(--signal); text-transform:uppercase; letter-spacing:.08em;}
+  .proj-body h3{ font-size:21px; margin:6px 0 4px;}
+  .proj-role{ font-size:13.5px; color:var(--muted-dark); margin-bottom:12px;}
+  .proj-body p{ font-size:14.5px; color:var(--muted-dark); margin-bottom:14px;}
+  .proj-feats{ list-style:none; font-size:13.5px; margin-bottom:16px;}
+  .proj-feats li{ padding-left:16px; position:relative; margin-bottom:4px; color:#2c3e50;}
+  .proj-feats li:before{ content:"→"; position:absolute; left:0; color:var(--signal);}
+  .proj-stack{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;}
+  .stackpill{ font-family:var(--mono); font-size:11px; background:#eef2f5; color:#3f5568; padding:3px 8px; border-radius:4px;}
+  .proj-actions{display:flex; gap:10px; flex-wrap:wrap;}
+  .proj-actions a{ font-size:13px; font-weight:700; text-decoration:none; padding:8px 14px; border-radius:6px;}
+  .act-primary{ background:var(--ink); color:#fff;}
+  .act-secondary{ border:1.5px solid #cdd8de; color:var(--ink);}
 
-  /* ---------- ABOUT ---------- */
-  #about{background:var(--bg-panel)}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-  .about-grid > div:first-child{position:sticky;top:110px;align-self:start}
-  @media (max-width:980px){.about-grid > div:first-child{position:static}}
-  .about-copy p{color:var(--text-soft);font-size:17.5px;margin-bottom:18px}
-  .about-copy strong{color:var(--text)}
+  /* ===== WHY / PROCESS ===== */
+  .why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .why-item{ padding:18px; border-left:2px solid var(--signal); background:#fff;}
+  .why-item b{display:block; font-size:14.5px; margin-bottom:4px;}
+  .why-item span{font-size:13px; color:var(--muted-dark);}
 
-  /* ---------- FEATURE BADGE GRID (What you get) ---------- */
-  #capabilities{background:var(--bg)}
-  .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .cap-card{
-    background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 18px;transition:.2s;
-  }
-  .cap-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,0,0,.35)}
-  .cap-icon{
-    width:38px;height:38px;border-radius:10px;background:var(--gold-soft);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:14px;
-  }
-  .cap-card h4{font-size:15.5px;margin-bottom:6px}
-  .cap-card p{font-size:13.5px;color:var(--text-soft)}
+  .process-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:step;}
+  .process-item{position:relative; padding-top:8px;}
+  .process-item .stepnum{ font-family:var(--mono); color:var(--signal); font-size:13px; font-weight:700;}
+  .process-item h3{ font-size:16px; margin:6px 0;}
+  .process-item p{ font-size:13.5px; color:var(--muted-dark);}
 
-  /* ---------- SKILLS ---------- */
-  #skills{background:var(--bg-panel)}
-  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.2s}
-  .skill-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.35);transform:translateY(-2px);border-color:var(--border-light)}
-  .skill-card h3{font-size:17px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-  .skill-icon{width:34px;height:34px;border-radius:9px;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:16px;flex:none}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{font-size:13.5px;padding:6px 12px;border-radius:8px;background:var(--bg-panel-alt);color:var(--text);border:1px solid var(--border)}
-  .pill.learning{background:rgba(232,184,75,.08);color:var(--gold);border-color:rgba(232,184,75,.3)}
+  /* ===== PRICING (demoted) ===== */
+  .pricing-note{ font-size:14px; color:var(--muted-dark); max-width:560px; margin-bottom:26px;}
+  .price-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .price-card{ background:#fff; border:1px solid #e1e8ed; border-radius:var(--radius); padding:24px;}
+  .price-card h3{ font-size:16px; margin-bottom:4px;}
+  .price-card .amt{ font-family:var(--mono); color:var(--signal); font-weight:700; font-size:15px; margin-bottom:10px;}
+  .price-card ul{ list-style:none; font-size:13px; color:var(--muted-dark);}
+  .price-card li{padding:2px 0;}
 
-  /* ---------- PROJECTS ---------- */
-  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .project-card{
-    border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--card);
-    transition:.25s ease;display:flex;flex-direction:column;
-  }
-  .project-card:hover{box-shadow:var(--shadow-gold);transform:translateY(-4px);border-color:rgba(232,184,75,.4)}
-  .project-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-panel)}
-  .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:saturate(1.05)}
-  .project-card:hover .project-media img{transform:scale(1.05)}
-  .project-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,15,28,.5))}
-  .project-tag{
-    position:absolute;top:14px;left:14px;background:rgba(10,15,28,.75);backdrop-filter:blur(4px);
-    color:var(--gold);font-family:var(--font-mono);font-size:11.5px;padding:5px 11px;border-radius:6px;
-    border:1px solid rgba(232,184,75,.3);z-index:1;
-  }
-  .project-body{padding:26px 26px 24px;display:flex;flex-direction:column;flex:1}
-  .project-client{font-size:13px;color:var(--text-dim);font-weight:500;margin-bottom:6px}
-  .project-body h3{font-size:20px;margin-bottom:6px}
-  .project-role{font-size:14px;color:var(--gold);font-weight:600;margin-bottom:12px}
-  .project-body p{color:var(--text-soft);font-size:15.5px;margin-bottom:16px}
-  .project-features{margin-bottom:18px}
-  .project-features li{font-size:14.5px;color:var(--text);padding-left:20px;position:relative;margin-bottom:7px}
-  .project-features li::before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700}
-  .project-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
-  .tech-row{display:flex;flex-wrap:wrap;gap:6px}
-  .tech-chip{font-size:12px;font-family:var(--font-mono);padding:4px 9px;border-radius:6px;background:var(--bg-panel-alt);color:var(--text-soft);border:1px solid var(--border)}
+  /* ===== TESTIMONIALS ===== */
+  .empty-note{ background:#fff; border:1px dashed #cdd8de; border-radius:var(--radius); padding:34px; text-align:center; color:var(--muted-dark); font-size:14.5px;}
 
-  /* ---------- COMPARISON ---------- */
-  #compare{background:var(--bg-panel)}
-  .compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .compare-col{border-radius:var(--radius);padding:28px;border:1px solid var(--border)}
-  .compare-col.bad{background:var(--bg-panel-alt)}
-  .compare-col.good{background:var(--card);border-color:var(--gold);box-shadow:var(--shadow-gold)}
-  .compare-head{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-weight:700;font-size:16px}
-  .compare-head .mark{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex:none}
-  .compare-col.bad .mark{background:rgba(148,163,184,.15);color:var(--text-dim)}
-  .compare-col.good .mark{background:var(--gold);color:#1A1300}
-  .compare-col li{font-size:14.5px;color:var(--text-soft);padding:10px 0;border-bottom:1px dashed var(--border);display:flex;gap:10px}
-  .compare-col li:last-child{border-bottom:none}
-  .compare-col.good li{color:var(--text)}
-  .compare-col li .x{color:#EF6666;font-weight:700}
-  .compare-col li .ok{color:var(--success);font-weight:700}
+  /* ===== CONTACT / FOOTER ===== */
+  .contact{ background:var(--ink); color:#fff;}
+  .contact h2{color:#fff;}
+  .contact .lede{color:#c3d2de;}
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .contact-links{ list-style:none; font-family:var(--mono); font-size:14px;}
+  .contact-links li{ padding:8px 0; border-top:1px solid var(--line);}
+  .contact-links li:first-child{border-top:0;}
+  .contact-links a{ text-decoration:none; color:#e6edf3;}
+  .contact-links a:hover{color:var(--signal);}
+  footer{ background:var(--ink); border-top:1px solid var(--line); color:var(--muted); font-size:12.5px; padding:24px 0;}
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 
-  /* ---------- SERVICES / PRICING ---------- */
-  #services{background:var(--bg)}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .service-card{
-    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
-    transition:.2s;position:relative;overflow:hidden;
-  }
-  .service-card::before{
-    content:"";position:absolute;top:0;left:0;right:0;height:3px;
-    background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:.2s;
-  }
-  .service-card:hover{border-color:rgba(232,184,75,.4);transform:translateY(-3px);box-shadow:var(--shadow-gold)}
-  .service-card:hover::before{opacity:1}
-  .service-icon{
-    width:42px;height:42px;border-radius:11px;background:var(--gold-soft);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;
-    border:1px solid rgba(232,184,75,.25);
-  }
-  .service-card h4{font-size:17px;margin-bottom:8px}
-  .service-card p{font-size:14.5px;color:var(--text-soft)}
-
-  #pricing{background:var(--bg-panel)}
-  .pricing-tabs{display:flex;gap:10px;margin-bottom:36px}
-  .tab-btn{font-size:14.5px;font-weight:600;padding:10px 20px;border-radius:100px;border:1px solid var(--border-light);background:transparent;cursor:pointer;color:var(--text-soft);transition:.15s}
-  .tab-btn.active{background:var(--gold);color:#1A1300;border-color:var(--gold)}
-  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
-  .price-card{border:1px solid var(--border);border-radius:var(--radius);padding:28px;background:var(--card);position:relative;display:flex;flex-direction:column;transition:.2s}
-  .price-card:hover{transform:translateY(-3px)}
-  .price-card.popular{border-color:var(--gold);box-shadow:var(--shadow-gold)}
-  .price-tag{position:absolute;top:-13px;right:24px;background:var(--gold);color:#1A1300;font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px}
-  .price-card h4{font-size:17px;margin-bottom:6px}
-  .price-amount{font-family:var(--font-display);font-size:25px;font-weight:800;color:var(--gold);margin-bottom:16px}
-  .price-card ul{margin-bottom:20px;flex:1}
-  .price-card li{font-size:14.5px;padding-left:20px;position:relative;margin-bottom:9px;color:var(--text-soft)}
-  .price-card li::before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700}
-  .price-suitable{font-size:13px;color:var(--text-dim);border-top:1px solid var(--border);padding-top:14px;margin-bottom:16px}
-  .price-suitable b{color:var(--text-soft);font-weight:600}
-  .other-services{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 32px}
-  .other-services .row{display:flex;justify-content:space-between;font-size:14.5px;padding:8px 0;border-bottom:1px dashed var(--border)}
-  .other-services .row span:first-child{color:var(--text)}
-  .other-services .row span:last-child{color:var(--gold);font-weight:600;white-space:nowrap;padding-left:12px}
-
-  /* ---------- PROCESS ---------- */
-  #process{background:var(--bg)}
-  .process-line{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
-  .process-line::before{content:"";position:absolute;top:22px;left:8%;right:8%;height:1px;background:var(--border);z-index:0}
-  .process-step{position:relative;z-index:1}
-  .step-num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#B8842E);color:#1A1300;font-family:var(--font-mono);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-bottom:18px}
-  .process-step h4{font-size:17px;margin-bottom:8px}
-  .process-step p{font-size:14.5px;color:var(--text-soft)}
-
-  /* ---------- TRUST ---------- */
-  #trust{background:var(--bg-panel)}
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .trust-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;font-size:14.5px;display:flex;align-items:center;gap:10px;font-weight:500}
-  .trust-item .check{color:var(--success);font-weight:700;flex:none}
-
-  /* ---------- TESTIMONIALS ---------- */
-  .testi-placeholder{border:1.5px dashed var(--border-light);border-radius:var(--radius);padding:48px 32px;text-align:center;color:var(--text-soft);background:var(--card)}
-  .testi-placeholder svg{margin-bottom:14px;opacity:.6}
-  .testi-placeholder h4{color:var(--text);font-size:17px;margin-bottom:8px}
-
-  /* ---------- FINAL CTA (replaces contact form) ---------- */
-  #contact{
-    background:radial-gradient(900px 500px at 50% -10%, rgba(232,184,75,.12), transparent 60%), var(--bg);
-    text-align:center;
-  }
-  #contact .eyebrow{justify-content:center}
-  #contact .eyebrow::before{display:none}
-  #contact .section-sub{margin-left:auto;margin-right:auto}
-  .cta-buttons{display:flex;gap:16px;justify-content:center;margin:36px 0 40px;flex-wrap:wrap}
-  .cta-buttons .btn{padding:17px 34px;font-size:17px}
-  .contact-info-strip{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;font-size:14.5px;color:var(--text-soft)}
-  .contact-info-strip .item{display:flex;align-items:center;gap:8px}
-  .contact-info-strip .item .icon{color:var(--gold)}
-
-  /* floating whatsapp */
-  .float-wa{
-    position:fixed;bottom:22px;right:22px;z-index:300;width:58px;height:58px;border-radius:50%;
-    background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.4);
-    transition:transform .2s ease;
-  }
-  .float-wa:hover{transform:scale(1.08)}
-
-  /* ---------- FOOTER ---------- */
-  footer{background:var(--bg-panel-alt);color:var(--text-dim);border-top:1px solid var(--border);padding:32px 0}
-  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px}
-  .footer-links{display:flex;gap:24px}
-  .footer-links a:hover{color:var(--gold)}
-
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-  .reveal.visible{opacity:1;transform:translateY(0)}
-
-  @media (prefers-reduced-motion:reduce){
-    .reveal{transition:none;opacity:1;transform:none}
-    .badge .dot{animation:none}
-    .cursor{animation:none}
-  }
-
-  @media (max-width:980px){
-    .hero-grid{grid-template-columns:1fr}
-    .about-grid{grid-template-columns:1fr;gap:36px}
-    .cap-grid{grid-template-columns:repeat(2,1fr)}
-    .skills-grid{grid-template-columns:1fr}
-    .project-grid{grid-template-columns:1fr}
-    .compare-wrap{grid-template-columns:1fr}
-    .services-grid{grid-template-columns:repeat(2,1fr)}
-    .pricing-grid{grid-template-columns:1fr}
-    .process-line{grid-template-columns:repeat(2,1fr);row-gap:36px}
-    .process-line::before{display:none}
-    .trust-grid{grid-template-columns:repeat(2,1fr)}
-    .stats-row{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width:720px){
-    .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 24px;border-bottom:1px solid var(--border);display:none;gap:18px}
-    .nav-links.open{display:flex}
-    .nav-toggle{display:block}
-    .nav-cta .btn-outline{display:none}
-    section{padding:60px 0}
-    .cap-grid{grid-template-columns:1fr}
-    .services-grid{grid-template-columns:1fr}
-    .other-services{grid-template-columns:1fr}
-    .trust-grid{grid-template-columns:1fr}
-    .hero-ctas{flex-direction:column;align-items:stretch}
-    .cta-buttons{flex-direction:column;align-items:stretch}
-    .contact-info-strip{flex-direction:column;gap:14px;align-items:center}
+  @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .navtoggle{display:block;}
+    .proj, .proj:nth-child(even){grid-template-columns:1fr;}
+    .proj-img img{min-height:180px;}
+    .proj:nth-child(even) .proj-img{order:0;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .process-row{grid-template-columns:repeat(2,1fr); row-gap:26px;}
+    .price-grid{grid-template-columns:1fr;}
+    .employers-card{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr; gap:24px;}
+    .status-right{display:none;}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="#top" class="logo"><span class="logo-mark">H</span>Hamidullah</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
+<!-- SIGNATURE STATUS BAR -->
+<div class="statusbar">
+  <div class="wrap">
+    <div class="status-left"><span class="status-dot"></span>Available — open to full-time roles</div>
+    <div class="status-right">
+      <span>Location: <b>Kuala Lumpur, MY (GMT+8)</b></span>
+      <span>Response time: <b>&lt; 24h</b></span>
+      <span>Also open to: <b>freelance / contract</b></span>
+    </div>
+  </div>
+</div>
+
+<nav class="mainnav">
+  <div class="wrap">
+    <div class="brand">hamidullah<span>.dev</span></div>
+    <ul class="navlinks">
+      <li><a href="#employers">For Employers</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Hire me</a></li>
+      <li><a href="#pricing">Freelance</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="btn btn-gold btn-sm">WhatsApp me</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a class="navcta" href="./assets/Hamidullah-Kunarai-CV.pdf" download>Download CV</a>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-panel" id="mobilepanel">
+    <ul>
+      <li><a href="#employers">For Employers</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#pricing">Freelance</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="./assets/Hamidullah-Kunarai-CV.pdf" download>Download CV ↓</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Full-Stack Laravel Developer · Kuala Lumpur</span>
+      <h1>I build the <em>systems</em><br>businesses run on.</h1>
+      <p class="lede">5+ years turning clinics, salons, restaurants, online stores, and job boards into software people actually use every day — backend architecture, admin dashboards, and AI-assisted delivery included.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="./assets/Hamidullah-Kunarai-CV.pdf" download>↓ Download CV</a>
+        <a class="btn btn-ghost" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20talk%20about%20a%20role%20or%20project." target="_blank" rel="noopener">Chat on WhatsApp →</a>
+      </div>
     </div>
-  </nav>
+    <div class="hero-panel">
+      <div class="hero-panel-head">
+        <span>profile.status</span>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">6</div><div class="label">business verticals shipped</div></div>
+        <div class="metric"><div class="num">5+</div><div class="label">years, Laravel &amp; PHP</div></div>
+        <div class="metric"><div class="num">3</div><div class="label">AI APIs in production use</div></div>
+        <div class="metric"><div class="num">MY</div><div class="label">based in Kuala Lumpur</div></div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<main>
-  <!-- HERO -->
-  <section id="top" class="hero">
-    <div class="hero-glow" aria-hidden="true"><img src="assets/hero-glow.jpg" alt=""></div>
-    <div class="hero-bg"></div>
-    <div class="container hero-grid">
+<!-- FOR EMPLOYERS -->
+<section class="employers" id="employers">
+  <div class="wrap">
+    <span class="eyebrow">For Recruiters &amp; Hiring Managers</span>
+    <div class="employers-card">
       <div>
-        <span class="badge"><span class="dot"></span>Available for new projects</span>
-        <div class="eyebrow">Full Stack Developer · Kuala Lumpur, Malaysia</div>
-        <h1>I build the systems <span class="gold">businesses run on.</span></h1>
-        <p class="hero-sub">Hamidullah — a Laravel &amp; PHP developer who turns clinics, salons, restaurants, online stores, and job boards into software that actually works day to day.</p>
-        <div class="hero-ctas">
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%20found%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn btn-gold">Chat on WhatsApp →</a>
-          <a href="#projects" class="btn btn-outline">See my work</a>
-        </div>
-        <div class="tech-badges">
-          <span class="tech-pill">Laravel</span>
-          <span class="tech-pill">MySQL</span>
-          <span class="tech-pill">Bootstrap</span>
-          <span class="tech-pill">REST APIs</span>
-          <span class="tech-pill">AI-Accelerated Dev</span>
-        </div>
+        <h2>Currently looking for a full-time Laravel role.</h2>
+        <p>Most recently a Web Developer at Brickfields Asia College (Feb 2023 – Jun 2025), building and maintaining production Laravel applications for 1,000+ students and staff. Since then, building independent projects — including a job portal and a clinic management system — to stay sharp and keep the stack current.</p>
       </div>
-
-      <div class="terminal reveal">
-        <div class="terminal-bar">
-          <span class="terminal-dot" style="background:#FF5F56"></span>
-          <span class="terminal-dot" style="background:#FFBD2E"></span>
-          <span class="terminal-dot" style="background:#27C93F"></span>
-        </div>
-        <div class="terminal-body" id="termBody"></div>
+      <div class="employers-actions">
+        <a class="btn btn-dark" href="./assets/Hamidullah-Kunarai-CV.pdf" download>↓ Download CV (PDF)</a>
+        <a class="btn btn-ghost" style="border-color:#cdd8de; color:var(--ink);" href="https://www.linkedin.com/in/hamidullah-kunarai-331091382/" target="_blank" rel="noopener">Connect on LinkedIn →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container about-grid">
-      <div class="reveal">
-        <div class="eyebrow">About</div>
-        <h2 class="section-title">Practical software, built with care.</h2>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <span class="eyebrow">Stack</span>
+    <h2>The modules behind every build.</h2>
+    <div class="skills-grid">
+      <div class="skill-mod">
+        <span class="modtag">backend</span>
+        <h3>Backend &amp; Database</h3>
+        <ul>
+          <li>Laravel</li><li>PHP</li><li>MySQL / SQL</li><li>REST APIs</li><li>MVC Architecture</li>
+        </ul>
       </div>
-      <div class="about-copy reveal">
-        <p>Hamidullah is a full stack developer based in Kuala Lumpur, Malaysia, working primarily with <strong>Laravel and PHP</strong>. He focuses on real business applications — the kind that clinics, salons, restaurants, and shops depend on every day — rather than one-off demos.</p>
-        <p>His approach starts with the workflow: how appointments get booked, how orders move through a kitchen, how a store tracks stock. The code follows from there — clean, structured, and built to be maintained, not just shipped.</p>
-        <p><strong>AI is part of the daily workflow, not an afterthought.</strong> Hamidullah uses AI tools — including the Claude, OpenAI, and Gemini APIs, plus AI coding assistants — to scaffold features, debug faster, and generate documentation, so more time goes into the parts of a project that actually need a human eye: structure, UX, and business logic.</p>
-        <div class="stats-row">
-          <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Business verticals built for</div></div>
-          <div class="stat-card"><div class="stat-num">Laravel</div><div class="stat-label">Primary framework</div></div>
-          <div class="stat-card"><div class="stat-num">MY</div><div class="stat-label">Based in Kuala Lumpur</div></div>
-          <div class="stat-card"><div class="stat-num">AI+</div><div class="stat-label">Uses AI daily to build faster</div></div>
-        </div>
+      <div class="skill-mod">
+        <span class="modtag">frontend</span>
+        <h3>Frontend &amp; UI</h3>
+        <ul>
+          <li>HTML5 / CSS3</li><li>Bootstrap</li><li>JavaScript</li><li>React</li><li>Responsive Design</li>
+        </ul>
+      </div>
+      <div class="skill-mod">
+        <span class="modtag">tooling</span>
+        <h3>Tools &amp; Practice</h3>
+        <ul>
+          <li>Git / GitHub</li><li>Composer</li><li>Performance Optimization</li><li>Security Best Practices</li>
+        </ul>
+      </div>
+      <div class="skill-mod">
+        <span class="modtag">ai + cloud</span>
+        <h3>AI &amp; Cloud</h3>
+        <ul>
+          <li>Claude API</li><li>OpenAI API</li><li>Gemini API</li><li>Prompt Engineering</li>
+          <li class="learning">Docker — learning</li>
+          <li class="learning">CI/CD — learning</li>
+          <li class="learning">Cloud Deployment — learning</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CAPABILITIES / WHAT YOU GET -->
-  <section id="capabilities">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Every build includes</div>
-        <h2 class="section-title">What you actually get.</h2>
-        <p class="section-sub">No matter the package, every project ships with the fundamentals done right.</p>
-      </div>
-      <div class="cap-grid">
-        <div class="cap-card reveal"><div class="cap-icon">▤</div><h4>Mobile Responsive</h4><p>Works cleanly on phone, tablet, and desktop — no broken layouts.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">⚡</div><h4>Performance-Minded</h4><p>Optimized queries, lean assets, and fast page loads.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">◈</div><h4>Clean Source Code</h4><p>Structured, commented, and easy for another developer to pick up.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">⌘</div><h4>Admin Dashboard</h4><p>Manage bookings, content, or orders without touching code.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">✎</div><h4>SEO-Friendly Structure</h4><p>Semantic HTML and clean URLs so search engines can read your site.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">✆</div><h4>WhatsApp Integration</h4><p>One-click chat button so customers can reach you instantly.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">◍</div><h4>Google Maps Embed</h4><p>Location and directions built right into your contact page.</p></div>
-        <div class="cap-card reveal"><div class="cap-icon">✓</div><h4>Post-Launch Support</h4><p>Help fixing bugs and making updates after the site goes live.</p></div>
-      </div>
-    </div>
-  </section>
+<!-- PROJECTS -->
+<section id="projects" style="background:#fff;">
+  <div class="wrap">
+    <span class="eyebrow">Selected Work</span>
+    <h2>Six industries, one way of building.</h2>
+    <p class="lede" style="margin-bottom:36px;">Real systems, designed around real workflows — booking, ordering, hiring, and trust-building.</p>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Skills</div>
-        <h2 class="section-title">The stack behind the systems.</h2>
-        <p class="section-sub">Backend, frontend, and the tools that keep a project maintainable long after launch.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <h3><span class="skill-icon">◆</span>Backend &amp; Database</h3>
-          <div class="pill-row"><span class="pill">Laravel</span><span class="pill">PHP</span><span class="pill">MySQL / SQL</span><span class="pill">REST APIs</span><span class="pill">MVC Architecture</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3><span class="skill-icon">▣</span>Frontend &amp; UI</h3>
-          <div class="pill-row"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Bootstrap</span><span class="pill">JavaScript</span><span class="pill">Responsive Design</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3><span class="skill-icon">⌥</span>Tools &amp; Version Control</h3>
-          <div class="pill-row"><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Composer</span><span class="pill">Performance Optimization</span><span class="pill">Security Best Practices</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <h3><span class="skill-icon">✦</span>AI &amp; Cloud</h3>
-          <div class="pill-row">
-            <span class="pill">AI-Assisted Development</span><span class="pill">Prompt Engineering</span>
-            <span class="pill">OpenAI API</span><span class="pill">Gemini API</span><span class="pill">Claude API</span>
-            <span class="pill learning">Cloud Deployment — learning</span><span class="pill learning">Docker — learning</span><span class="pill learning">CI/CD — learning</span>
-          </div>
+    <div class="proj">
+      <div class="proj-img"><img src="https://hamidkunari.github.io/portfolio/assets/clinic.jpg" alt="MediCare Elite clinic booking system"></div>
+      <div class="proj-body">
+        <span class="proj-tag">01 · Healthcare</span>
+        <h3>MediCare Elite</h3>
+        <div class="proj-role">Clinic Management System</div>
+        <p>A Laravel-based system for clinics to manage appointments, doctor schedules, and patient records from one dashboard, with a multi-step quick-booking widget.</p>
+        <ul class="proj-feats">
+          <li>Multi-step appointment booking</li>
+          <li>Doctor &amp; department scheduling</li>
+          <li>Patient records &amp; role-based access</li>
+        </ul>
+        <div class="proj-stack"><span class="stackpill">Laravel</span><span class="stackpill">MySQL</span><span class="stackpill">Bootstrap</span><span class="stackpill">JavaScript</span></div>
+        <div class="proj-actions">
+          <a class="act-secondary" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20clinic%2Fbooking%20system%20like%20MediCare%20Elite." target="_blank" rel="noopener">Ask about this →</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Selected Projects</div>
-        <h2 class="section-title">Six industries, one way of building.</h2>
-        <p class="section-sub">Real client websites and systems, designed around real workflows — booking, ordering, hiring, and trust-building.</p>
-      </div>
-      <div class="project-grid">
-
-        <article class="project-card reveal">
-          <div class="project-media">
-            <span class="project-tag">01 / Healthcare</span>
-            <img src="https://hamidkunari.github.io/portfolio/assets/clinic.jpg" alt="MediCare Elite clinic website — quick appointment booking widget" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-client">MediCare Elite</div>
-            <h3>Clinic Management System</h3>
-            <div class="project-role">Appointments &amp; patient records</div>
-            <p>A Laravel-based system for clinics to manage appointments, doctor schedules, and patient records from one dashboard, with a multi-step quick-booking widget.</p>
-            <ul class="project-features"><li>Multi-step appointment booking</li><li>Doctor &amp; department scheduling</li><li>Patient records &amp; role-based access</li></ul>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech-chip">Laravel</span><span class="tech-chip">MySQL</span><span class="tech-chip">Bootstrap</span><span class="tech-chip">JavaScript</span></div>
-              <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20clinic%2Fbooking%20system%20like%20MediCare%20Elite." target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ask about this →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-media">
-            <span class="project-tag">02 / Beauty &amp; Wellness</span>
-            <img src="https://hamidkunari.github.io/portfolio/assets/salon.jpg" alt="Luxury Salon Platform website — hero and booking concierge chat" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-client">Luxury Salon Platform</div>
-            <h3>Salon Booking Platform</h3>
-            <div class="project-role">Online booking &amp; concierge chat</div>
-            <p>A booking platform where customers reserve service slots online, backed by an in-page concierge chat and a referral rewards prompt for repeat guests.</p>
-            <ul class="project-features"><li>Real-time slot booking</li><li>Concierge chat widget</li><li>Referral rewards &amp; staff admin</li></ul>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech-chip">Laravel</span><span class="tech-chip">MySQL</span><span class="tech-chip">Bootstrap</span><span class="tech-chip">JavaScript</span></div>
-              <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20salon%20booking%20platform%20like%20Luxury%20Salon%20Platform." target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ask about this →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-media">
-            <span class="project-tag">03 / Food &amp; Beverage</span>
-            <img src="https://hamidkunari.github.io/portfolio/assets/restaurant.jpg" alt="Warung Selera restaurant website hero with menu and reservation CTAs" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-client">Warung Selera</div>
-            <h3>Restaurant Website &amp; Booking</h3>
-            <div class="project-role">Menu, gallery &amp; table reservations</div>
-            <p>A restaurant site built around its menu and story, with reservations front and center and a stats bar for ratings and years in business.</p>
-            <ul class="project-features"><li>Digital menu showcase</li><li>Table reservations</li><li>Guest ratings &amp; gallery</li></ul>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech-chip">Laravel</span><span class="tech-chip">MySQL</span><span class="tech-chip">Bootstrap</span><span class="tech-chip">CSS</span></div>
-              <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20restaurant%20website%20like%20Warung%20Selera." target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ask about this →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-media">
-            <span class="project-tag">04 / Recruitment</span>
-            <img src="https://hamidkunari.github.io/portfolio/assets/jobs.jpg" alt="JobsPortal website hero with job search and application tracking" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-client">JobsPortal</div>
-            <h3>Job Portal</h3>
-            <div class="project-role">Connecting job seekers with employers</div>
-            <p>A Malaysia-focused job platform where employers post vacancies and candidates search, apply, and track status — salary shown up front in Ringgit.</p>
-            <ul class="project-features"><li>Job search &amp; filtering</li><li>Employer &amp; candidate dashboards</li><li>Application tracking &amp; moderation</li></ul>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech-chip">Laravel</span><span class="tech-chip">PHP</span><span class="tech-chip">MySQL</span><span class="tech-chip">Bootstrap</span></div>
-              <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20job%20portal%20platform%20like%20JobsPortal." target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ask about this →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-media">
-            <span class="project-tag">05 / Home Services</span>
-            <img src="https://hamidkunari.github.io/portfolio/assets/aircon.jpg" alt="CoolTech aircon and HVAC service website hero" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-client">CoolTech</div>
-            <h3>Aircon &amp; HVAC Service Site</h3>
-            <div class="project-role">Booking &amp; trust-building for a service business</div>
-            <p>A booking-first site for an aircon and HVAC company, built to earn trust fast with WhatsApp booking and a same-day response promise.</p>
-            <ul class="project-features"><li>WhatsApp-based booking</li><li>Service &amp; process pages</li><li>Trust stats, mobile-first</li></ul>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech-chip">Laravel</span><span class="tech-chip">Bootstrap</span><span class="tech-chip">JavaScript</span><span class="tech-chip">MySQL</span></div>
-              <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20service-business%20site%20like%20CoolTech." target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ask about this →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-media">
-            <span class="project-tag">06 / Design &amp; Portfolio</span>
-            <img src="https://hamidkunari.github.io/portfolio/assets/interior.jpg" alt="OURA Design Studio interior architecture website hero" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-client">OURA Design Studio</div>
-            <h3>Interior Design Studio Site</h3>
-            <div class="project-role">Editorial portfolio for a KL design studio</div>
-            <p>A portfolio site for a luxury interior architecture studio in Kuala Lumpur, built around large imagery and a highlights panel of projects and awards.</p>
-            <ul class="project-features"><li>Editorial hero &amp; typography</li><li>Studio highlights panel</li><li>Portfolio, process &amp; inquiry CTA</li></ul>
-            <div class="project-footer">
-              <div class="tech-row"><span class="tech-chip">Laravel</span><span class="tech-chip">Bootstrap</span><span class="tech-chip">CSS</span><span class="tech-chip">JavaScript</span></div>
-              <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20an%20editorial%20portfolio%20site%20like%20OURA%20Design%20Studio." target="_blank" rel="noopener" class="btn btn-outline btn-sm">Ask about this →</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARISON -->
-  <section id="compare">
-    <div class="container">
-      <div class="section-head reveal center" style="text-align:center">
-        <div class="eyebrow" style="justify-content:center"><span style="width:16px;height:1.5px;background:var(--gold);display:none"></span></div>
-        <h2 class="section-title">A cheap template vs. a system built for your workflow.</h2>
-        <p class="section-sub center">Plenty of sites look fine in a screenshot. Here's what actually differs once your business starts using it every day.</p>
-      </div>
-      <div class="compare-wrap">
-        <div class="compare-col bad reveal">
-          <div class="compare-head"><span class="mark">✕</span>Generic template site</div>
-          <ul>
-            <li><span class="x">✕</span>Built from a one-size-fits-all theme, edited slightly</li>
-            <li><span class="x">✕</span>Booking or ordering bolted on with a third-party plugin</li>
-            <li><span class="x">✕</span>No admin panel — every change needs a developer</li>
-            <li><span class="x">✕</span>Database structure copied from a demo, not your workflow</li>
-            <li><span class="x">✕</span>No one to call once it's "done"</li>
-          </ul>
-        </div>
-        <div class="compare-col good reveal">
-          <div class="compare-head"><span class="mark">✓</span>Built by Hamidullah</div>
-          <ul>
-            <li><span class="ok">✓</span>Designed around how your business actually operates</li>
-            <li><span class="ok">✓</span>Booking, ordering, or records built natively in Laravel</li>
-            <li><span class="ok">✓</span>Admin dashboard so you manage content without code</li>
-            <li><span class="ok">✓</span>Database modeled on your real workflow, not a template</li>
-            <li><span class="ok">✓</span>Direct line to the developer after launch</li>
-          </ul>
+    <div class="proj">
+      <div class="proj-img"><img src="https://hamidkunari.github.io/portfolio/assets/salon.jpg" alt="Luxury Salon Platform booking website"></div>
+      <div class="proj-body">
+        <span class="proj-tag">02 · Beauty &amp; Wellness</span>
+        <h3>Luxury Salon Platform</h3>
+        <div class="proj-role">Salon Booking Platform</div>
+        <p>A booking platform where customers reserve service slots online, backed by an in-page concierge chat and a referral rewards prompt for repeat guests.</p>
+        <ul class="proj-feats">
+          <li>Real-time slot booking</li>
+          <li>Concierge chat widget</li>
+          <li>Referral rewards &amp; staff admin</li>
+        </ul>
+        <div class="proj-stack"><span class="stackpill">Laravel</span><span class="stackpill">MySQL</span><span class="stackpill">Bootstrap</span><span class="stackpill">JavaScript</span></div>
+        <div class="proj-actions">
+          <a class="act-secondary" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20salon%20booking%20platform%20like%20Luxury%20Salon%20Platform." target="_blank" rel="noopener">Ask about this →</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Services</div>
-        <h2 class="section-title">What I can build for your business.</h2>
-        <p class="section-sub">From a single booking module to a full multi-role platform.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal"><div class="service-icon">◆</div><h4>Laravel Development</h4><p>Clean, structured backends — from database design to business logic — built on Laravel and PHP.</p></div>
-        <div class="service-card reveal"><div class="service-icon">▣</div><h4>Frontend Development</h4><p>Responsive, accessible interfaces with HTML5, CSS3, Bootstrap, and JavaScript.</p></div>
-        <div class="service-card reveal"><div class="service-icon">⇄</div><h4>REST API Development</h4><p>API endpoints for mobile apps, third-party integrations, or internal tools.</p></div>
-        <div class="service-card reveal"><div class="service-icon">⌘</div><h4>Admin Dashboards</h4><p>Role-based dashboards for staff, doctors, or managers to run day-to-day operations.</p></div>
-        <div class="service-card reveal"><div class="service-icon">◍</div><h4>Business Websites</h4><p>Fast, professional sites for shops, clinics, restaurants, and service businesses.</p></div>
-        <div class="service-card reveal"><div class="service-icon">✎</div><h4>Bug Fixing &amp; Maintenance</h4><p>Diagnosing issues in existing Laravel or PHP codebases and keeping sites running.</p></div>
-        <div class="service-card reveal"><div class="service-icon">⚡</div><h4>Performance Optimization</h4><p>Faster queries, leaner assets, and better load times on existing applications.</p></div>
-        <div class="service-card reveal"><div class="service-icon">✓</div><h4>Website Maintenance</h4><p>Ongoing updates, monitoring, and support plans after launch.</p></div>
-        <div class="service-card reveal"><div class="service-icon">✦</div><h4>AI Integration</h4><p>Wiring Claude, OpenAI, or Gemini APIs into real product features, not just chat widgets.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Pricing</div>
-        <h2 class="section-title">Packages for every kind of project.</h2>
-        <p class="section-sub">Whether it's a brochure site or a full business system, here's roughly what it takes — priced in Ringgit for freelance and direct-client work.</p>
-      </div>
-
-      <div class="pricing-tabs">
-        <button class="tab-btn active" data-tab="design">Web Design</button>
-        <button class="tab-btn" data-tab="dev">Web Development</button>
-      </div>
-
-      <div class="pricing-grid" data-panel="design">
-        <div class="price-card reveal">
-          <h4>Basic Website</h4>
-          <div class="price-amount">RM150–RM300</div>
-          <ul><li>1–3 pages</li><li>Mobile friendly</li><li>WhatsApp button</li><li>Contact information</li><li>Fast delivery</li></ul>
-          <div class="price-suitable">Suitable for <b>small business, tuition teachers, personal profiles</b></div>
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20order%20the%20Basic%20Website%20package." target="_blank" rel="noopener" class="btn btn-outline btn-block">Get this package</a>
-        </div>
-        <div class="price-card popular reveal">
-          <span class="price-tag">Most popular</span>
-          <h4>Business Website</h4>
-          <div class="price-amount">RM350–RM800</div>
-          <ul><li>Up to 5 pages</li><li>Professional design</li><li>Contact form</li><li>Google Maps embed</li><li>WhatsApp integration</li><li>Fully responsive</li></ul>
-          <div class="price-suitable">Suitable for <b>shops, restaurants, service businesses</b></div>
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20order%20the%20Business%20Website%20package." target="_blank" rel="noopener" class="btn btn-gold btn-block">Get this package</a>
-        </div>
-        <div class="price-card reveal">
-          <h4>E-commerce Website</h4>
-          <div class="price-amount">From RM1,000</div>
-          <ul><li>Full online store</li><li>Product listings</li><li>Shopping cart</li><li>Payment gateway</li><li>Order management</li><li>Mobile friendly</li></ul>
-          <div class="price-suitable">Suitable for <b>online sellers, retail businesses, product-based companies</b></div>
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20order%20the%20E-commerce%20Website%20package." target="_blank" rel="noopener" class="btn btn-outline btn-block">Get this package</a>
-        </div>
-      </div>
-
-      <div class="pricing-grid" data-panel="dev" style="display:none">
-        <div class="price-card reveal">
-          <h4>Starter System</h4>
-          <div class="price-amount">From RM800</div>
-          <ul><li>Single-module system (booking or records)</li><li>Admin dashboard</li><li>Laravel + MySQL database</li><li>Basic reports &amp; exports</li><li>~2 weeks delivery</li></ul>
-          <div class="price-suitable">Suitable for <b>clinics, salons, small shops</b></div>
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20order%20the%20Starter%20System%20package." target="_blank" rel="noopener" class="btn btn-outline btn-block">Get this package</a>
-        </div>
-        <div class="price-card popular reveal">
-          <span class="price-tag">Most popular</span>
-          <h4>Business System</h4>
-          <div class="price-amount">RM1,500–RM4,000</div>
-          <ul><li>Multi-role dashboards</li><li>Booking / ordering workflows</li><li>REST API integration</li><li>Custom reports &amp; analytics</li><li>Email / WhatsApp notifications</li></ul>
-          <div class="price-suitable">Suitable for <b>clinics, restaurants, job portals</b></div>
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20order%20the%20Business%20System%20package." target="_blank" rel="noopener" class="btn btn-gold btn-block">Get this package</a>
-        </div>
-        <div class="price-card reveal">
-          <h4>Enterprise System</h4>
-          <div class="price-amount">From RM5,000</div>
-          <ul><li>Full custom platform</li><li>Multiple user roles &amp; permissions</li><li>Payment &amp; third-party API integration</li><li>AI-assisted features</li><li>Ongoing support plan</li></ul>
-          <div class="price-suitable">Suitable for <b>multi-branch businesses, marketplaces, SaaS products</b></div>
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20order%20the%20Enterprise%20System%20package." target="_blank" rel="noopener" class="btn btn-outline btn-block">Get this package</a>
-        </div>
-      </div>
-
-      <div class="other-services reveal">
-        <div class="row"><span>Website maintenance</span><span>From RM30/month</span></div>
-        <div class="row"><span>Domain &amp; hosting setup</span><span>From RM100/year</span></div>
-        <div class="row"><span>Student management system</span><span>From RM300</span></div>
-        <div class="row"><span>Tuition centre system</span><span>From RM500</span></div>
-        <div class="row"><span>Payment tracking system</span><span>From RM300</span></div>
-        <div class="row"><span>WhatsApp reminder system</span><span>From RM200</span></div>
-        <div class="row"><span>Custom business system</span><span>Quotation on request</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Process</div>
-        <h2 class="section-title">How a project actually gets built.</h2>
-      </div>
-      <div class="process-line">
-        <div class="process-step reveal"><div class="step-num">01</div><h4>Discover</h4><p>Understand the business, its workflow, and what the system actually needs to do.</p></div>
-        <div class="process-step reveal"><div class="step-num">02</div><h4>Design</h4><p>Plan the database structure, architecture, and UI flow before writing code.</p></div>
-        <div class="process-step reveal"><div class="step-num">03</div><h4>Build</h4><p>Develop with Laravel, focused on clean, maintainable, and secure code.</p></div>
-        <div class="process-step reveal"><div class="step-num">04</div><h4>Ship &amp; Support</h4><p>Deploy, test against real use, and support the system after launch.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section id="trust">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Why work with me</div>
-        <h2 class="section-title">Built for real use, not just a demo.</h2>
-      </div>
-      <div class="trust-grid">
-        <div class="trust-item reveal"><span class="check">✓</span>Open to freelance work</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Open to remote opportunities</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Clean coding practices</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Responsive development</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Performance optimization</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Version control with Git</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Continuous learning</div>
-        <div class="trust-item reveal"><span class="check">✓</span>Production-ready mindset</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Testimonials</div>
-        <h2 class="section-title">What clients say.</h2>
-      </div>
-      <div class="testi-placeholder reveal">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9AAAC4" stroke-width="1.5" style="margin:0 auto"><path d="M7 8h4v6H8a1 1 0 0 1-1-1V8Zm9 0h4v6h-3a1 1 0 0 1-1-1V8Z"/></svg>
-        <h4>Client testimonials are on the way.</h4>
-        <p>This space will fill up with real feedback as current projects wrap up. No placeholders, no invented quotes — just what clients actually say once the work is done.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section id="contact">
-    <div class="container">
-      <div class="reveal">
-        <div class="eyebrow">Let's build something</div>
-        <h2 class="section-title center">Got a project in mind? <span class="gold">Let's talk today.</span></h2>
-        <p class="section-sub center">Available for freelance projects and full-time roles. Based in Kuala Lumpur, working with teams anywhere. Message me directly — no forms, no waiting.</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn btn-gold">Chat on WhatsApp →</a>
-          <a href="mailto:hamidkunari94@gmail.com" class="btn btn-outline">Email me instead</a>
-        </div>
-        <div class="contact-info-strip">
-          <span class="item"><span class="icon">✆</span>018-353 3408</span>
-          <span class="item"><span class="icon">@</span>hamidkunari94@gmail.com</span>
-          <span class="item"><span class="icon">◍</span>Kuala Lumpur, Malaysia · GMT+8</span>
-          <span class="item"><span class="icon">in</span><a href="https://www.linkedin.com/in/hamid-kunari-331091382/" target="_blank" rel="noopener">LinkedIn</a></span>
+    <div class="proj">
+      <div class="proj-img"><img src="https://hamidkunari.github.io/portfolio/assets/restaurant.jpg" alt="Warung Selera restaurant website"></div>
+      <div class="proj-body">
+        <span class="proj-tag">03 · Food &amp; Beverage</span>
+        <h3>Warung Selera</h3>
+        <div class="proj-role">Restaurant Website &amp; Booking</div>
+        <p>A restaurant site built around its menu and story, with reservations front and center and a stats bar for ratings and years in business.</p>
+        <ul class="proj-feats">
+          <li>Digital menu showcase</li>
+          <li>Table reservations</li>
+          <li>Guest ratings &amp; gallery</li>
+        </ul>
+        <div class="proj-stack"><span class="stackpill">Laravel</span><span class="stackpill">MySQL</span><span class="stackpill">Bootstrap</span><span class="stackpill">CSS</span></div>
+        <div class="proj-actions">
+          <a class="act-secondary" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20restaurant%20website%20like%20Warung%20Selera." target="_blank" rel="noopener">Ask about this →</a>
         </div>
       </div>
     </div>
-  </section>
-</main>
 
-<a class="float-wa" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.36 1.28 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.17 3.03 14.69 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24Zm4.52-6.18c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.24.25-.4.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.43.06-.65.31-.23.24-.86.84-.86 2.05s.88 2.37 1 2.54c.12.16 1.74 2.65 4.21 3.71.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
-</a>
+    <div class="proj">
+      <div class="proj-img"><img src="https://hamidkunari.github.io/portfolio/assets/jobs.jpg" alt="JobsPortal job search platform"></div>
+      <div class="proj-body">
+        <span class="proj-tag">04 · Recruitment</span>
+        <h3>JobsPortal</h3>
+        <div class="proj-role">Job Portal</div>
+        <p>A Malaysia-focused job platform where employers post vacancies and candidates search, apply, and track status — salary shown up front in Ringgit.</p>
+        <ul class="proj-feats">
+          <li>Job search &amp; filtering</li>
+          <li>Employer &amp; candidate dashboards</li>
+          <li>Application tracking &amp; moderation</li>
+        </ul>
+        <div class="proj-stack"><span class="stackpill">Laravel</span><span class="stackpill">PHP</span><span class="stackpill">MySQL</span><span class="stackpill">Bootstrap</span></div>
+        <div class="proj-actions">
+          <a class="act-secondary" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20job%20portal%20platform%20like%20JobsPortal." target="_blank" rel="noopener">Ask about this →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-img"><img src="https://hamidkunari.github.io/portfolio/assets/aircon.jpg" alt="CoolTech aircon service website"></div>
+      <div class="proj-body">
+        <span class="proj-tag">05 · Home Services</span>
+        <h3>CoolTech</h3>
+        <div class="proj-role">Aircon &amp; HVAC Service Site</div>
+        <p>A booking-first site for an aircon and HVAC company, built to earn trust fast with WhatsApp booking and a same-day response promise.</p>
+        <ul class="proj-feats">
+          <li>WhatsApp-based booking</li>
+          <li>Service &amp; process pages</li>
+          <li>Trust stats, mobile-first</li>
+        </ul>
+        <div class="proj-stack"><span class="stackpill">Laravel</span><span class="stackpill">Bootstrap</span><span class="stackpill">JavaScript</span><span class="stackpill">MySQL</span></div>
+        <div class="proj-actions">
+          <a class="act-secondary" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20a%20service-business%20site%20like%20CoolTech." target="_blank" rel="noopener">Ask about this →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-img"><img src="https://hamidkunari.github.io/portfolio/assets/interior.jpg" alt="OURA Design Studio interior architecture website"></div>
+      <div class="proj-body">
+        <span class="proj-tag">06 · Design &amp; Portfolio</span>
+        <h3>OURA Design Studio</h3>
+        <div class="proj-role">Interior Design Studio Site</div>
+        <p>A portfolio site for a luxury interior architecture studio in Kuala Lumpur, built around large imagery and a highlights panel of projects and awards.</p>
+        <ul class="proj-feats">
+          <li>Editorial hero &amp; typography</li>
+          <li>Studio highlights panel</li>
+          <li>Portfolio, process &amp; inquiry CTA</li>
+        </ul>
+        <div class="proj-stack"><span class="stackpill">Laravel</span><span class="stackpill">Bootstrap</span><span class="stackpill">CSS</span><span class="stackpill">JavaScript</span></div>
+        <div class="proj-actions">
+          <a class="act-secondary" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27m%20interested%20in%20an%20editorial%20portfolio%20site%20like%20OURA%20Design%20Studio." target="_blank" rel="noopener">Ask about this →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Why Work With Me</span>
+    <h2>Built for real use, not just a demo.</h2>
+    <div class="why-grid">
+      <div class="why-item"><b>Full-time &amp; remote ready</b><span>Open to relocation-free remote roles or on-site in KL/PJ.</span></div>
+      <div class="why-item"><b>Clean coding practices</b><span>Structured, commented, maintainable by another developer.</span></div>
+      <div class="why-item"><b>Performance-minded</b><span>Optimized queries, lean assets, fast page loads by default.</span></div>
+      <div class="why-item"><b>AI-accelerated delivery</b><span>Claude, OpenAI &amp; Gemini APIs used daily to ship faster.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:#fff;">
+  <div class="wrap">
+    <span class="eyebrow">Process</span>
+    <h2>How a system actually gets built.</h2>
+    <div class="process-row">
+      <div class="process-item"><span class="stepnum">01</span><h3>Discover</h3><p>Understand the business, its workflow, and what the system actually needs to do.</p></div>
+      <div class="process-item"><span class="stepnum">02</span><h3>Design</h3><p>Plan the database structure, architecture, and UI flow before writing code.</p></div>
+      <div class="process-item"><span class="stepnum">03</span><h3>Build</h3><p>Develop with Laravel, focused on clean, maintainable, and secure code.</p></div>
+      <div class="process-item"><span class="stepnum">04</span><h3>Ship &amp; Support</h3><p>Deploy, test against real use, and support the system after launch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING — demoted, framed as freelance-only -->
+<section id="pricing">
+  <div class="wrap">
+    <span class="eyebrow">Freelance &amp; Contract Work</span>
+    <h2>Also open to freelance projects.</h2>
+    <p class="pricing-note">Priced in Ringgit for direct-client work — for full-time roles, see the CV above instead.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Business Website</h3>
+        <div class="amt">RM350 – RM800</div>
+        <ul><li>Up to 5 pages</li><li>Contact form &amp; maps</li><li>Fully responsive</li></ul>
+      </div>
+      <div class="price-card">
+        <h3>Starter System</h3>
+        <div class="amt">From RM800</div>
+        <ul><li>Booking or records module</li><li>Admin dashboard</li><li>~2 weeks delivery</li></ul>
+      </div>
+      <div class="price-card">
+        <h3>Business System</h3>
+        <div class="amt">RM1,500 – RM4,000</div>
+        <ul><li>Multi-role dashboards</li><li>REST API integration</li><li>Custom reports</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:#fff;">
+  <div class="wrap">
+    <span class="eyebrow">Testimonials</span>
+    <h2>What clients say.</h2>
+    <div class="empty-note">Client testimonials are on the way. No placeholders, no invented quotes — just what clients actually say once the work is done.</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Got a role or a project in mind?</h2>
+      <p class="lede">Open to full-time Laravel roles and freelance/contract work. Based in Kuala Lumpur, happy to work with teams anywhere. Message directly — no forms, no waiting.</p>
+      <div class="cta-row" style="margin-top:22px;">
+        <a class="btn btn-primary" href="./assets/Hamidullah-Kunarai-CV.pdf" download>↓ Download CV</a>
+        <a class="btn btn-ghost" href="https://wa.me/60183533408?text=Hi%20Hamidullah%2C%20I%27d%20like%20to%20discuss%20a%20role%20or%20project." target="_blank" rel="noopener">Chat on WhatsApp →</a>
+      </div>
+    </div>
+    <ul class="contact-links">
+      <li>✆ <a href="tel:+60183533408">018-353 3408</a></li>
+      <li>@ <a href="mailto:hamidkunari94@gmail.com">hamidkunari94@gmail.com</a></li>
+      <li>◍ Kuala Lumpur, Malaysia · GMT+8</li>
+      <li>in <a href="https://www.linkedin.com/in/hamidullah-kunarai-331091382/" target="_blank" rel="noopener">linkedin.com/in/hamidullah-kunarai-331091382</a></li>
+    </ul>
+  </div>
+</section>
 
 <footer>
-  <div class="container footer-row">
-    <span>© <span id="year"></span> Hamidullah — Full Stack Developer, Laravel · PHP · Kuala Lumpur</span>
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="mailto:hamidkunari94@gmail.com">Email</a>
-      <a href="https://wa.me/60183533408" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://www.linkedin.com/in/hamid-kunari-331091382/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
+  <div class="wrap">
+    <span>© Hamidullah Kunarai — Full-Stack Developer, Laravel · PHP · Kuala Lumpur</span>
+    <span>Built with Laravel-grade care.</span>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduceMotion && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-  }
-
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const tab = btn.dataset.tab;
-      document.querySelectorAll('[data-panel]').forEach(p => { p.style.display = (p.dataset.panel === tab) ? 'grid' : 'none'; });
-    });
-  });
-
-  const termLines = [
-    { prompt: '$', text: 'whoami', delay: 0 },
-    { out: 'hamidullah — full stack developer', delay: 500 },
-    { prompt: '$', text: 'php artisan about', delay: 900 },
-    { out: 'Stack: Laravel · PHP · MySQL · Bootstrap', delay: 1500 },
-    { out: 'Based in: Kuala Lumpur, Malaysia', delay: 1900 },
-    { out: 'Status: Available for new projects', delay: 2300, ok:true },
-    { out: 'Workflow: AI-accelerated — Claude, OpenAI & Gemini APIs', delay: 2700 },
-  ];
-  const termBody = document.getElementById('termBody');
-  function typeLine(el, text, cb){
-    let i = 0;
-    const span = document.createElement('span');
-    el.appendChild(span);
-    const iv = setInterval(() => {
-      span.textContent += text[i]; i++;
-      if (i >= text.length){ clearInterval(iv); if(cb) cb(); }
-    }, 22);
-  }
-  function buildTerminal(){
-    termBody.innerHTML = '';
-    let cursorLine = document.createElement('div');
-    cursorLine.className = 'line';
-    termBody.appendChild(cursorLine);
-    termLines.forEach((l) => {
-      setTimeout(() => {
-        cursorLine.remove();
-        const line = document.createElement('div');
-        line.className = 'line';
-        if (l.prompt){
-          const p = document.createElement('span'); p.className = 'prompt'; p.textContent = l.prompt;
-          line.appendChild(p);
-          const t = document.createElement('span');
-          line.appendChild(t);
-          termBody.appendChild(line);
-          typeLine(t, l.text, () => { termBody.appendChild(cursorLine); });
-        } else {
-          const o = document.createElement('span');
-          o.className = l.ok ? 'ok' : 'out';
-          o.textContent = l.out;
-          line.appendChild(o);
-          termBody.appendChild(line);
-          termBody.appendChild(cursorLine);
-        }
-      }, l.delay);
-    });
-    cursorLine.innerHTML = '<span class="cursor"></span>';
-  }
-  if (!reduceMotion) { buildTerminal(); }
-  else { termBody.innerHTML = termLines.map(l => l.prompt ? `<div class="line"><span class="prompt">${l.prompt}</span> ${l.text}</div>` : `<div class="line"><span class="${l.ok?'ok':'out'}">${l.out}</span></div>`).join(''); }
-</script>
-
 </body>
+<script>
+  const t = document.getElementById('navtoggle');
+  const p = document.getElementById('mobilepanel');
+  if (t && p) {
+    t.addEventListener('click', () => {
+      const open = p.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+      t.textContent = open ? '✕' : '☰';
+    });
+    p.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      p.classList.remove('open');
+      t.setAttribute('aria-expanded', 'false');
+      t.textContent = '☰';
+    }));
+  }
+</script>
 </html>
